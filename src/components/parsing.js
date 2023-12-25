@@ -10,6 +10,7 @@ const Parsing = () => {
   const [searchName, setSearchName] = useState("");
   const [searchMinPrice, setSearchMinPrice] = useState("");
   const [searchMaxPrice, setSearchMaxPrice] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,9 +51,19 @@ const Parsing = () => {
         setFilteredData(extractedData);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        // 로딩 상태를 false로 변경
+        setIsLoading(false);
       }
     };
-    fetchData();
+
+    const loadingDelay = 5000;
+    const timeoutId = setTimeout(() => {
+      setIsLoading(true);
+      fetchData();
+    }, loadingDelay);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const handleSearch = () => {
@@ -98,7 +109,12 @@ const Parsing = () => {
     setFilteredData(productData);
   };
 
-  return (
+  return isLoading ? (
+    <>
+      <h1>Crawling...</h1>
+      <img src="/loading1.gif" alt="Loading..." />
+    </>
+  ) : (
     <div>
       <h1>Product Information</h1>
       <div className="search-container">
