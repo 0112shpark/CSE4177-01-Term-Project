@@ -1,0 +1,89 @@
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-container div {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.search-container label {
+  font-weight: bold;
+}
+
+.search-container input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 5px;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #aed581; /* 파스텔 그린 */
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 20px;
+}
+
+img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+  max-width: 250px;
+}
+
+/* 색상 및 추가 스타일 */
+td:nth-child(3) {
+  background-color: #ffcc80; /* 파스텔 오렌지 */
+}
+
+td:nth-child(4) {
+  background-color: #b2ebf2; /* 파스텔 블루 */
+}
+
+td:nth-child(5) {
+  background-color: #ce93d8; /* 파스텔 퍼플 */
+}
+
+a {
+  color: #1a237e; /* 딥 퍼플 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
